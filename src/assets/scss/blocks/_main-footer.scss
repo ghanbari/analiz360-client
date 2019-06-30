@@ -1,0 +1,50 @@
+// Main footer
+
+.main-footer {
+  height: $main-footer-height;
+
+  .links {
+    .home:hover svg {
+      fill: #288ecd !important;
+    }
+
+    .instagram:hover svg {
+      fill: #C13584 !important;
+    }
+
+    .telegram:hover svg {
+      fill: #0088cc !important;
+    }
+
+    .twitter:hover svg {
+      fill: #1da1f2 !important;
+    }
+  }
+
+  .copyright {
+    color: $main-footer-copyright-color;
+  }
+
+  .version {
+    color: $main-footer-version-color;
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: block !important;
+    height: auto;
+
+    .nav {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: $spacer / 2;
+    }
+
+    .copyright {
+      display: inline-block;
+      width: 100%;
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// Variable overrides
+
+$black-gray: #565656;
+$brands-color: #20a8d8;
+$body-bg: #f4f3ef;
+$input-bg: #f3f2ee;
+$input-border-color: #e8e7e3;
+$label-color: $black-gray;
+
+$custom-control-indicator-checked-color: #66615b;
+$custom-control-indicator-checked-border-color: #66615b;
+$custom-control-indicator-checked-bg: white;
+$custom-control-indicator-active-bg: white;
+$custom-control-indicator-active-border-color: #66615b;
+$custom-control-indicator-border-width: 3px;
+$custom-control-indicator-focus-box-shadow: none;
+$custom-control-indicator-focus-border-color: $black-gray;
+$enable-caret: false;
+
+$pagination-border-width: 2px;
+
+$pagination-border-color: #66615b;
+$pagination-color: #66615b;
+$pagination-line-height: 22px;
+$pagination-padding-y: 6px;
+$pagination-padding-x: 6px;
+$pagination-hover-color: white;
+$pagination-hover-bg: #66615b;
+$pagination-hover-border-color: #66615b;
+$pagination-active-color: white;
+$pagination-active-bg: #66615b;
+$pagination-active-border-color: #66615b;
+$pagination-border-radius: 20px;
+$table-hover-bg: rgba(0, 73, 200, 0.04);
+$table-line-color: $table-hover-bg;
