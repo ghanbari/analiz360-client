@@ -47,6 +47,11 @@ module.exports = {
     },
   },
   configureWebpack: {
+    watch: true,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 1000
+    },
     resolve: {
       alias: {
         icons: path.resolve(__dirname, 'node_modules/vue-material-design-icons'),
