@@ -65,7 +65,7 @@ export default {
         type: '',
         service: {}
       },
-      image: '/default/upload_md.png'
+      image: require('@/assets/images/upload.png')
     }
   },
 
