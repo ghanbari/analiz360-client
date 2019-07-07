@@ -75,9 +75,13 @@ export default {
   },
 
   watch: {
-    domain (val) {
-      if (val) {
-        this.getDomainWatchersList({ query: { 'domain.domain': val.domain, order: { expireAt: 'desc' } } })
+    domain: {
+      deep: true,
+      immediate: true,
+      handler (val) {
+        if (val) {
+          this.getDomainWatchersList({ query: { 'domain.domain': val.domain, order: { expireAt: 'desc' } } })
+        }
       }
     },
 

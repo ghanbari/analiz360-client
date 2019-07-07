@@ -22,7 +22,7 @@
           <b-col
             lg="6"
             cols="12"
-            class="pb-5"
+            class="pb-2"
           >
             <b-card
               no-body
@@ -41,7 +41,7 @@
           <b-col
             lg="6"
             cols="12"
-            class="pb-5"
+            class="pb-2"
           >
             <b-card
               no-body
@@ -49,7 +49,7 @@
             >
               <rank-chart
                 title="رتبه ایران"
-                :statistics="domainStatistics.localRanks"
+                :statistics="domainStatistics.localRanks.length ? domainStatistics.localRanks : {}"
                 class="apexcharts-area"
                 type="area"
                 height="250"
@@ -62,7 +62,7 @@
           <b-col
             lg="6"
             cols="12"
-            class="pb-5"
+            class="pb-2"
           >
             <b-card
               no-body
@@ -80,7 +80,7 @@
           <b-col
             lg="6"
             cols="12"
-            class="pb-5"
+            class="pb-2"
           >
             <b-card
               no-body
@@ -100,7 +100,7 @@
           <b-col
             lg="6"
             cols="12"
-            class="pb-5"
+            class="pb-2"
           >
             <b-card
               no-body
@@ -159,9 +159,13 @@ export default {
   },
 
   watch: {
-    domain (val) {
-      if (val) {
-        this.domainStatisticsLoad({ id: this.domain.id })
+    domain: {
+      deep: true,
+      immediate: true,
+      handler (val) {
+        if (val) {
+          this.domainStatisticsLoad({ id: this.domain.id })
+        }
       }
     },
 
