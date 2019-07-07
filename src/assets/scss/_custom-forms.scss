@@ -13,7 +13,7 @@
 .custom-control {
   line-height: 1.5rem;
   //for custom checkbox text is far away from box(default: $custom-control-gutter + $custom-control-indicator-size)
-  padding-right: 0px; //rtl
+  padding-right: 0; //rtl
 }
 
 
@@ -21,14 +21,33 @@
 
 // Custom checkboxes
 .custom-checkbox {
+  .custom-control-input ~ .custom-control-label {
+    &::before {
+      right: -1.6rem !important;
+    }
+
+    &::after {
+      top: 5px;
+      right: -1.2rem !important;
+      left: unset !important;
+    }
+  }
+
   .custom-control-input:disabled:checked ~ .custom-control-label {
     &::after {
       border-color: $custom-control-disabled-color;
     }
   }
+}
+
+.custom-radio {
+  .custom-control-label::before {
+    right: unset !important;
+  }
 
   .custom-control-label::after {
-    right: -19px;
+    right: unset !important;
+    left: 5px !important;
   }
 }
 
