@@ -3,7 +3,7 @@
     fluid
     class="main-content-container px-4 pt-5"
   >
-    <b-row>
+    <b-row v-if="domainsStatistic && domainsStatistic.hasOwnProperty('tops')">
       <b-col
         xl="4"
         lg="6"

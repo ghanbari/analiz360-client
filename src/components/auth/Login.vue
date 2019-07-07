@@ -1,6 +1,6 @@
 <template>
   <b-form @submit.prevent="login(credentials)">
-    <h1>ورود</h1>
+    <h1 class="text-sm-right text-center">ورود</h1>
     <p class="text-muted">
       لطفا اطلاعات حساب خود را وارد نمایید
     </p>
@@ -10,7 +10,7 @@
         v-model="credentials.username"
         :required="true"
         type="text"
-        class="form-control"
+        class="form-control text-center"
         placeholder="نام کاربری"
         autocomplete="username email"
       />
@@ -21,7 +21,7 @@
         v-model="credentials.password"
         :required="true"
         type="password"
-        class="form-control"
+        class="form-control text-center"
         placeholder="رمزعبور"
         autocomplete="current-password"
       />
@@ -35,12 +35,9 @@
         >
           ورود
         </b-button>
-        <b-button
-          variant="primary"
-          class="d-xs-inline d-sm-none"
-        >
-          ثبت نام
-        </b-button>
+        <router-link to="register">
+          <b-button variant="primary" class="d-xs-inline d-sm-none mr-2">ثبت نام</b-button>
+        </router-link>
       </b-col>
       <b-col
         sm="6"

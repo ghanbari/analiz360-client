@@ -15,7 +15,7 @@
                 <div
                   v-for="field in fieldsList"
                   :key="field.key"
-                  class="custom-control custom-checkbox custom-control-inline mr-5"
+                  class="custom-control custom-checkbox custom-control-inline mr-4"
                 >
                   <input
                     :id="'fieldsList' + field.key"

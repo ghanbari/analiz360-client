@@ -46,6 +46,8 @@ export default {
     /* fix an problem in "node_modules/shards-ui/src/scss/_variables.scss" */
     $popover-arrow-width: 16px !default;
 
+    @import 'assets/scss/shards-dashboards';
+
     @import '~bootstrap/scss/bootstrap';
 
     /* Import Bootstrap Vue Styles */

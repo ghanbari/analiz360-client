@@ -116,7 +116,7 @@ export default {
     }),
 
     defaultImage () {
-      return require('@/assets/images/logo/logo_lg.svg')
+      return require('@/assets/images/logo/logo_md.png')
     }
   },
 

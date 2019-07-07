@@ -13,13 +13,13 @@
               id="main-logo"
               class="d-inline-block align-top mr-1"
               style="max-width: 25px;"
-              src="@/assets/images/logo/logo_sm.svg"
-              alt="Shards Dashboard"
+              src="@/assets/images/logo/logo_sm.png"
+              alt="Analiz360"
             >
             <span
               v-if="!hideLogoText"
-              class="d-none d-md-inline ml-1"
-            >Shards Dashboard</span>
+              class="d-none d-md-inline mx-2"
+            >آنالیز ۳۶۰</span>
           </div>
         </router-link>
         <a

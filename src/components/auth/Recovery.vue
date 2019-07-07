@@ -21,7 +21,7 @@
         autocomplete="off"
       />
       <b-form-invalid-feedback>
-        <span v-if="passwordRecoveryViolations && passwordRecoveryViolations.hasOwnProperty('token')">{{ passwordRecoveryViolations.token }}</span>
+        <span v-if="violations.hasOwnProperty('token')">{{ violations.token }}</span>
         <span v-else>{{ veeErrors.first('token') }}</span>
       </b-form-invalid-feedback>
     </b-input-group>
@@ -41,7 +41,7 @@
         autocomplete="off"
       />
       <b-form-invalid-feedback>
-        <span v-if="passwordRecoveryViolations && passwordRecoveryViolations.hasOwnProperty('password')">{{ passwordRecoveryViolations.password }}</span>
+        <span v-if="violations.hasOwnProperty('password')">{{ violations.password }}</span>
         <span v-else>{{ veeErrors.first('password') }}</span>
       </b-form-invalid-feedback>
     </b-input-group>
@@ -60,7 +60,7 @@
         autocomplete="off"
       />
       <b-form-invalid-feedback>
-        <span v-if="passwordRecoveryViolations && passwordRecoveryViolations.hasOwnProperty('password')">{{ passwordRecoveryViolations.password }}</span>
+        <span v-if="violations.hasOwnProperty('password')">{{ violations.password }}</span>
         <span v-else>{{ veeErrors.first('passwordConfirm') }}</span>
       </b-form-invalid-feedback>
     </b-input-group>
@@ -80,7 +80,7 @@
         </b-button>
         <b-button
           variant="danger"
-          class="active px-4"
+          class="active px-4 mr-1"
           @click="$emit('reset-token')"
         >
           <span class="icon-refresh" />
@@ -88,7 +88,7 @@
         <router-link
           to="login"
           tag="button"
-          class="btn btn-primary active d-sm-none d-xs-inline"
+          class="btn btn-primary active d-sm-none d-xs-inline mr-1"
         >
           ورود
         </router-link>

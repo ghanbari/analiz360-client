@@ -21,7 +21,7 @@
         autocomplete="off"
       />
       <b-form-invalid-feedback>
-        <span v-if="userViolations && userViolations.hasOwnProperty('firstName')">{{ userViolations.firstName }}</span>
+        <span v-if="violations.hasOwnProperty('firstName')">{{ violations.firstName }}</span>
         <span v-else>{{ veeErrors.first('firstName') }}</span>
       </b-form-invalid-feedback>
     </b-input-group>
@@ -40,7 +40,7 @@
         autocomplete="off"
       />
       <b-form-invalid-feedback>
-        <span v-if="userViolations && userViolations.hasOwnProperty('lastName')">{{ userViolations.lastName }}</span>
+        <span v-if="violations.hasOwnProperty('lastName')">{{ violations.lastName }}</span>
         <span v-else>{{ veeErrors.first('lastName') }}</span>
       </b-form-invalid-feedback>
     </b-input-group>
@@ -53,13 +53,13 @@
         name="token"
         required="required"
         type="text"
-        data-vv-as="کد امنیتی"
+        data-vv-as="شناسه امنیتی"
         :state="!isInvalid('token') && validateState('token')"
         placeholder="شناسه امنیتی"
         autocomplete="off"
       />
       <b-form-invalid-feedback>
-        <span v-if="userViolations && userViolations.hasOwnProperty('token')">{{ userViolations.token }}</span>
+        <span v-if="violations.hasOwnProperty('token')">{{ violations.token }}</span>
         <span v-else>{{ veeErrors.first('token') }}</span>
       </b-form-invalid-feedback>
     </b-input-group>
@@ -78,7 +78,7 @@
         autocomplete="off"
       />
       <b-form-invalid-feedback>
-        <span v-if="userViolations && userViolations.hasOwnProperty('rawPassword')">{{ userViolations.rawPassword }}</span>
+        <span v-if="violations.hasOwnProperty('rawPassword')">{{ violations.rawPassword }}</span>
         <span v-else>{{ veeErrors.first('rawPassword') }}</span>
       </b-form-invalid-feedback>
     </b-input-group>
@@ -97,13 +97,13 @@
         v-if="isInvalid('referrerCode')"
         class="invalid-feedback"
       >
-        {{ userViolations.referrerCode }}
+        {{ violations.referrerCode }}
       </div>
     </b-input-group>
     <b-row>
       <b-col
         cols="12"
-        class="ml-auto"
+        class="ml-auto mt-auto"
       >
         <b-button
           :disabled="userLoading || veeErrors.any()"
@@ -115,11 +115,18 @@
         </b-button>
         <b-button
           variant="danger"
-          class="active px-4"
+          class="active px-4 mr-1"
           @click="$emit('reset-token')"
         >
           <span class="icon-refresh" />
         </b-button>
+        <router-link
+          to="login"
+          tag="button"
+          class="btn btn-primary active d-sm-none d-xs-inline mr-1"
+        >
+          ورود
+        </router-link>
       </b-col>
     </b-row>
   </b-form>
@@ -166,20 +173,16 @@ export default {
       apiKey: 'apiKey'
     }),
 
+    violations () {
+      return this.userViolations || {}
+    },
+
     registrationType () {
       return this.$remoteConfig.get('registration.type', null)
     }
   },
 
   watch: {
-    userError (val) {
-      this.$toasted.clear()
-
-      if (val) {
-        this.$toasted.error(val, { icon: 'icon-attention' })
-      }
-    },
-
     apiKey (newKey) {
       if (newKey) {
         this.profileLoad({ auth: true })
@@ -189,6 +192,14 @@ export default {
     user (user) {
       if (user) {
         this.$router.push(this.$route.query.hasOwnProperty('redirect') ? this.$route.query.redirect : '/')
+      }
+    },
+
+    userError (val) {
+      this.$toasted.clear()
+
+      if (val) {
+        this.$toasted.error(val, { icon: 'icon-attention' })
       }
     },
 
@@ -210,10 +221,6 @@ export default {
       this.register.phone = this.receptor
     } else {
       this.register.email = this.receptor
-    }
-
-    if (this.$route.query.hasOwnProperty('code')) {
-      this.register.referrerCode = this.$route.query.code
     }
   },
 

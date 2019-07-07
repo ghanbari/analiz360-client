@@ -1,12 +1,12 @@
 <template>
   <d-navbar-nav class="border-left flex-row">
-    <li class="nav-item border-right dropdown notifications my-auto">
+    <li class="nav-item border-right dropdown notifications">
       <a
         v-d-toggle.notifications
         class="nav-link nav-link-icon text-center"
       >
         <div class="nav-link-icon__wrapper">
-          <bell-icon />
+          <bell-icon style="font-size: 24px" />
           <!--          <d-badge pill theme="danger">2</d-badge>-->
         </div>
       </a>
