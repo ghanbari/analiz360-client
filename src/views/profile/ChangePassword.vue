@@ -98,14 +98,14 @@
                           :disabled="passwordRecoveryLoading || veeErrors.any()"
                           type="submit"
                           variant="success"
-                          class="active px-4"
+                          class="active px-4 d-block d-sm-inline mx-auto"
                         >
                           بروزرسانی
                         </b-button>
                         <b-button
                           v-if="tokenCreated"
                           variant="danger"
-                          class="active px-4"
+                          class="active px-4 mr-sm-2 mt-sm-0 mt-2 mx-auto d-block d-sm-inline"
                           @click="tokenReset() && tokenCreate({receptor})"
                         >
                           <span class="icon-refresh" /> ارسال مجدد کد امنیتی

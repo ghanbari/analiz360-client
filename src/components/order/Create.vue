@@ -42,6 +42,7 @@
               <b-button
                 size="sm"
                 variant="danger"
+                class="d-block d-sm-inline mx-auto"
                 @click="$router.go(-1)"
               >
                 بازگشت
@@ -49,6 +50,7 @@
               <b-button
                 :disabled="product.unit === 2 && $user.credit < product.price"
                 size="sm"
+                class="mr-sm-2 mt-sm-0 mt-2 mx-auto d-block d-sm-inline"
                 variant="success"
                 @click="addOrder"
               >

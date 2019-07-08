@@ -70,14 +70,14 @@
                   :disabled="emailVerifyLoading || veeErrors.any()"
                   type="submit"
                   variant="success"
-                  class="active px-4"
+                  class="active px-4 mr-2"
                 >
                   بروزرسانی
                 </b-button>
                 <b-button
                   v-if="tokenCreated"
                   variant="danger"
-                  class="active px-4"
+                  class="active px-4 mr-2"
                   @click="tokenReset() && tokenCreate({receptor: email})"
                 >
                   <span class="icon-refresh" />
