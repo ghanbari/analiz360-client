@@ -29,7 +29,6 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import VueSlider from 'vue-slider-component'
-import 'vue-slider-component/theme/default.css'
 
 export default {
   components: {
@@ -123,3 +122,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  @import '~vue-slider-component/theme/antd.css';
+</style>
