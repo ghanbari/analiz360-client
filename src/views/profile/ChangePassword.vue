@@ -105,7 +105,7 @@
                         <b-button
                           v-if="tokenCreated"
                           variant="danger"
-                          class="active px-4 mr-sm-2 mt-sm-0 mt-2 mx-auto d-block d-sm-inline"
+                          class="d-block d-sm-inline px-4 mx-auto mr-sm-2 mt-2 mt-sm-0"
                           @click="tokenReset() && tokenCreate({receptor})"
                         >
                           <span class="icon-refresh" /> ارسال مجدد کد امنیتی

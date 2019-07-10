@@ -29,22 +29,32 @@
     color: $main-footer-version-color;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(xs) {
     display: block !important;
     height: auto;
 
     .nav {
-      width: 100%;
-      display: block;
-      border-bottom: 1px solid $border-color;
-      padding-bottom: $spacer / 2;
+      //width: 100%;
+      //display: block;
+      //border-bottom: 1px solid $border-color;
+      //padding-bottom: $spacer / 2;
+
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
     .copyright {
-      display: inline-block;
-      width: 100%;
-      padding: 1rem;
+      //display: inline-block;
+      //width: 100%;
+      //padding: 1rem;
+
+      margin-left: auto !important;
+      margin-right: auto !important;
       text-align: center;
+    }
+
+    .version {
+      display: none;
     }
   }
 }

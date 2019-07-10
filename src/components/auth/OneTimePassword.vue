@@ -3,8 +3,9 @@
     v-if="!tokenCreationResult && registrationType"
     @submit.prevent="submit()"
   >
-    <h1>کد امنیتی</h1>
-    <p class="text-muted">
+    <h1 class="d-none d-sm-block">کد امنیتی</h1>
+    <h2 class="d-block d-sm-none text-center">کد امنیتی</h2>
+    <p class="text-muted text-center text-sm-right">
       لطفا {{ registrationType === 'phone' ? 'شماره همراه' : 'ایمیل' }} خود را وارد نمایید
     </p>
     <b-input-group class="mb-3">

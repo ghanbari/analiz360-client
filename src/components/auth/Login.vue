@@ -1,7 +1,8 @@
 <template>
   <b-form @submit.prevent="login(credentials)">
-    <h1 class="text-sm-right text-center">ورود</h1>
-    <p class="text-muted">
+    <h1 class="d-none d-sm-block">ورود</h1>
+    <h2 class="d-block d-sm-none text-center">ورود</h2>
+    <p class="text-muted text-center text-sm-right">
       لطفا اطلاعات حساب خود را وارد نمایید
     </p>
     <b-input-group class="mb-3">
@@ -31,12 +32,12 @@
         <b-button
           type="submit"
           variant="success"
-          class="px-4"
+          class="px-4 d-block d-sm-inline mx-auto"
         >
           ورود
         </b-button>
         <router-link to="register">
-          <b-button variant="primary" class="d-xs-inline d-sm-none mr-2">ثبت نام</b-button>
+          <b-button variant="primary" class="px-3 d-block d-sm-none mx-auto mr-sm-2 mt-2 mt-sm-0">ثبت نام</b-button>
         </router-link>
       </b-col>
       <b-col
@@ -46,7 +47,7 @@
         <router-link to="Recovery">
           <b-button
             variant="link"
-            class="px-0"
+            class="px-0 d-block d-sm-inline mt-2 mt-sm-0 mx-auto mr-sm-2"
           >
             بازیابی رمزعبور
           </b-button>

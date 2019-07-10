@@ -3,9 +3,10 @@
     autocomplete="off"
     @submit.prevent="submit()"
   >
-    <h1>بازیابی رمزعبور</h1>
-    <p class="text-muted">
-      لطفا اطلاعات خود را وارد نمایید
+    <h1 class="d-none d-sm-block">بازیابی رمزعبور</h1>
+    <h2 class="d-block d-sm-none text-center">بازیابی رمزعبور</h2>
+    <p class="text-muted text-center text-sm-right">
+      لطفا اطلاعات حساب خود را وارد نمایید
     </p>
     <b-input-group class="mb-3">
       <b-input-group-append><b-input-group-text><i class="icon-user-secret" /></b-input-group-text></b-input-group-append>
@@ -74,13 +75,13 @@
           :disabled="passwordRecoveryLoading || veeErrors.any()"
           type="submit"
           variant="success"
-          class="active px-4"
+          class="active px-3 px-sm-4 d-block d-sm-inline mx-auto mr-sm-2"
         >
           بازیابی
         </b-button>
         <b-button
           variant="danger"
-          class="active px-4 mr-1"
+          class="px-4 d-block d-sm-inline mt-2 mt-sm-0 mx-auto mr-sm-2"
           @click="$emit('reset-token')"
         >
           <span class="icon-refresh" />
@@ -88,7 +89,7 @@
         <router-link
           to="login"
           tag="button"
-          class="btn btn-primary active d-sm-none d-xs-inline mr-1"
+          class="btn btn-primary d-block d-sm-none mt-2 mt-sm-0 mx-auto mr-sm-2 px-3"
         >
           ورود
         </router-link>
