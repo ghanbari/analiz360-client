@@ -31,9 +31,10 @@ export default {
   },
 
   metaInfo () {
+    console.log(this.$config);
     return {
       title: this.$route.meta.title || this.$route.meta.label,
-      titleTemplate: `%s | ${this.configs && this.configs.hasOwnProperty('title') ? this.configs.title : ''}`
+      titleTemplate: `%s | ${this.$config.has('title') ? this.$config.get('title') : ''}`
     }
   }
 }
