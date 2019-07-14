@@ -3,18 +3,14 @@
     fluid
     class="main-content-container px-4"
   >
-    <b-row
-      v-if="domainError"
-      class="error"
-    >
-      <b-col md="12">
-        <b-card>
-          <p class="text-center">
-            {{ domainError }}
-          </p>
-        </b-card>
-      </b-col>
-    </b-row>
+    <div class="error" v-if="domainError">
+      <div class="error__content">
+        <h2>خطا</h2>
+        <h3>متاسفانه خطایی پیش آمده است!</h3>
+        <p>{{ domainError }}</p>
+        <router-link :to="{name: 'Dashboard'}"><d-button pill>&larr; بازگشت</d-button></router-link>
+      </div>
+    </div>
 
     <template v-if="domain && !domainError">
       <b-row class="basic">

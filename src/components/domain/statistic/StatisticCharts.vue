@@ -46,10 +46,11 @@
             <b-card
               no-body
               class="px-2"
+              v-if="domainStatistics.localRanks.constructor.name == 'Object'"
             >
               <rank-chart
                 title="رتبه ایران"
-                :statistics="domainStatistics.localRanks.length ? domainStatistics.localRanks : {}"
+                :statistics="domainStatistics.localRanks"
                 class="apexcharts-area"
                 type="area"
                 height="250"

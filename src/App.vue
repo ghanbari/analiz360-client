@@ -31,7 +31,6 @@ export default {
   },
 
   metaInfo () {
-    console.log(this.$config);
     return {
       title: this.$route.meta.title || this.$route.meta.label,
       titleTemplate: `%s | ${this.$config.has('title') ? this.$config.get('title') : ''}`

@@ -1,6 +1,7 @@
 import fetch from '../../../../utils/fetch'
 import * as types from './mutation_types'
 import storage from '../../../../utils/storage'
+import NotFoundError from '../../../../error/NotFoundError'
 
 export const retrieve = ({ commit }, domain) => {
   const request = () => {
@@ -16,7 +17,14 @@ export const retrieve = ({ commit }, domain) => {
       })
       .catch((e) => {
         commit(types.DOMAIN_SHOW_TOGGLE_LOADING)
-        commit(types.DOMAIN_SHOW_SET_ERROR, `دامنه ${domain} یافت نشد`)
+
+        if (e instanceof NotFoundError) {
+          commit(types.DOMAIN_SHOW_SET_ERROR, `دامنه ${domain} یافت نشد`)
+
+          return
+        }
+
+        commit(types.DOMAIN_SHOW_SET_ERROR, e.message)
       })
   }
 
